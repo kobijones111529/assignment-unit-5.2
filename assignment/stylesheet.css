@@ -1,17 +1,44 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
 }
 
 .header {
   padding: 24px;
 
   background: rgb(0, 50, 50);
-
   color: rgb(240, 250, 200);
-
   text-align: center;
 }
 
 .header h1 {
   margin: 0;
+}
+
+.main-container {
+  height: 100%;
+  background-image: url('record.png');
+  /* 100% doesn't calculate quite right when sizing by height */
+  background-repeat: space;
+  background-size: auto calc(99% / 5);
+}
+
+@media (max-aspect-ratio: 3/4) {
+  .main-container {
+    background-size:calc(99% / 5) auto;
+  }
+}
+
+.main {
+  padding: 1em;
+
+  background: rgba(240, 240, 240, 0.9);
+}
+
+.main p {
+  color: white;
+  text-shadow: black 0px 0px 2px;
+  text-align: center;
 }
